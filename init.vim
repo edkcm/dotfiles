@@ -1,32 +1,30 @@
-set relativenumber	
-set hlsearch	
-set cursorline		
-set tabstop=4		
-set softtabstop=4	
-					
-set expandtab		
-set shiftwidth=4	
-set cc=80			
-set smarttab
-set encoding=UTF-8
+set relativenumber		" Dynamic line numbering
+set showmatch			" Show matching brackets
+set autoindent			" Autoindent new line
+set hlsearch			" Highlight search results
+syntax on			    "Syntax coloring
+set incsearch			" Incremental search
+set tabstop=4			" Set tab to 4 column
+set softtabstop=4		" Set multiple spaces as tabstop
+set expandtab			" Convert tab to spaces
+set cursorline          " Highlight cursorline
+set ruler
 
 call plug#begin()
-Plug 'preservim/nerdtree'
+
 Plug 'ryanoasis/vim-devicons'
-" loading the plugin
-let g:webdevicons_enable = 1
-
-" adding the flags to NERDTree
-let g:webdevicons_enable_nerdtree = 1
-
-let g:WebDevIconsOS = 'Darwin'
-
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+"open new split panes to right and below
+set splitright
+set splitbelow
 
